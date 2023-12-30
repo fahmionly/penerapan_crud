@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Mobil extends Model
 {
     use HasFactory;
-    protected $table = 'mobil_tabel';
+    protected $table = 'mobil';
     protected $guarded = [];
 }

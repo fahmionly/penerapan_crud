@@ -12,7 +12,8 @@ class MobilController extends Controller
      */
     public function index()
     {
-        //
+        $data_mobil = Mobil::all();
+        return view('mobil.index', compact('data_mobil'));
     }
 
     /**
@@ -20,7 +21,7 @@ class MobilController extends Controller
      */
     public function create()
     {
-        //
+        return view('mobil.create');
     }
 
     /**
@@ -28,38 +29,47 @@ class MobilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Mobil::create($input);
+        return redirect('/mobil');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Mobil $mobil)
+    public function show($id)
     {
-        //
+        $mobil = Mobil::find($id);
+        return view('mobil.detail', compact('mobil'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mobil $mobil)
+    public function edit($id)
     {
-        //
+        $mobil = Mobil::find($id);
+        return view('mobil.edit', compact('mobil'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mobil $mobil)
+    public function update(Request $request, $id)
     {
-        //
+        $mobil = Mobil::find($id);
+        $data = $request->all();
+        $mobil->update($data);
+        return redirect('/mobil');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mobil $mobil)
+    public function destroy($id)
     {
-        //
+        $data = Mobil::find($id);
+        $data->delete();
+        return back();
     }
 }

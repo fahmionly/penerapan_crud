@@ -16,11 +16,11 @@
                         </div>
                         <div class="form-group">
                             <label> Warna Mobil </label>
-                            <input type="text" class="form-control mt-2" name="nama_mobil">
+                            <input type="text" class="form-control mt-2" name="warna">
                         </div>
                         <div class="form-group">
-                            <label> Asal Makanan </label>
-                            <input type="text" class="form-control mt-2" name="asal_makanan">
+                            <label> Plat  Nomor </label>
+                            <input type="text" class="form-control mt-2" name="plat_mobil">
                         </div>   
                         <div class="form-group mt-2">
                             <button type="submit" class="btn btn-success">Tambah</button>
