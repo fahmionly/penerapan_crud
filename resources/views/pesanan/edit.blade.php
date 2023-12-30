@@ -1,0 +1,41 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Ubah Pesanan</div>
+
+                <div class="card-body">
+                    <form action="{{route('pesanan.update', $pesanan->id)}}" method="post">
+                        @csrf
+                        {{method_field('PUT')}}
+                        <div class="form-group">
+                            <label> Nama Makanan </label>
+                            <select name="id_makanan" class="form-control">
+                                <option value="{{$pesanan->id_makanan}}"> {{$pesanan->makanan->nama_makanan}}</option>
+                                @foreach($makanan as $row)
+                                <option value="{{$row->id}}">{{$row->nama_makanan}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label> Nama Pemesan </label>
+                            <input type="text" class="form-control mt-2" value="{{$pesanan->nama_pemesan}}" name="nama_pemesan">
+                        </div>
+                        <div class="form-group">
+                            <label> Jumlah Pesanan </label>
+                            <input type="number" class="form-control mt-2" value="{{$pesanan->jumlah}}" name="jumlah">
+                        </div>   
+                        <div class="form-group mt-2">
+                            <button type="submit" class="btn btn-success">Ubah</button>
+                            <a href="/pesanan" class="btn btn-danger">Kembali</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

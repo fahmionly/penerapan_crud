@@ -27,5 +27,6 @@ Route::get('namaguru', [App\Http\Controllers\GuruController::class, 'namaguru'])
 Route::get('mapel', [App\Http\Controllers\GuruController::class, 'mapel']);
 
 Route::resource('/makanan', App\Http\Controllers\MakananController::class);
+Route::resource('/pesanan', App\Http\Controllers\PesananController::class);
 Route::resource('/mobil', App\Http\Controllers\MobilController::class);
 ?>

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('makanan_tabel', function (Blueprint $table) {
-            $table->increments('id'); //typedata integer autoincrement
-            $table->string('nama_makanan');
-            $table->string('asal_makanan');
+        Schema::create('pesanan', function (Blueprint $table) {
+            $table->id();
+            $table->integer('id_makanan')->unsigned();
+            $table->string('nama_pemesan');
+            $table->integer('jumlah');
+            $table->foreign('id_makanan')->on('makanan_tabel')->references('id')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('makanan_tabel');
+        Schema::dropIfExists('pesanan');
     }
 };
