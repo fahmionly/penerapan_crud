@@ -29,6 +29,7 @@
                         </div>   
                         <div class="form-group mt-2">
                             <button type="submit" class="btn btn-success">Tambah</button>
+                            <a href="/pesanan" class="btn btn-danger">Kembali</a>
                         </div>
                     </form>
                 </div>
